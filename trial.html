@@ -1,0 +1,234 @@
+<style>
+/*Timeline*/
+#timeline-sect {
+    width: 90%;
+    margin: 6rem auto 3rem;
+    overflow-x: auto;   /* enable horizontal scrolling */
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-bottom: 2rem; /* space for scrollbar */
+}
+
+.timeline {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+    gap: 3rem; /* spacing between items */
+    min-width: max-content; /* ensures scroll */
+}
+
+.timeline-item {
+    position: relative;
+    width: 250px;
+    flex-shrink: 0;
+    text-align: center;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+.timeline-item:hover {
+    transform: scale(1.1);
+}
+.timeline-item h3 {
+    color: black;
+    padding: 10px;
+    margin: 3.5rem 0 1rem 3.5rem;
+    border-radius: 5px;
+    position: absolute;
+}
+.timeline-item p {
+    background-color: #555;
+    color: white;
+    padding: 2rem 0rem;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 1.2rem;
+}
+.timeline-item .triangle {
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 20px solid #234d20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    margin-top: 3.3rem;
+    z-index: 3;
+}
+
+/* Timeline for small devices */
+#timeline-small-dev {
+    width: 70%;
+    margin: 5rem auto -2rem;
+}
+.timeline-small {
+    margin-bottom: 2rem;
+}
+.timeline-item-small {
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+.timeline-item-small h3 {
+    color: black;
+    padding: 10px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+.timeline-item-small p {
+    background-color: #555;
+    color: white;
+    padding: 2rem 0rem;
+    border-radius: 5px;
+    margin: 0;
+    font-size: 1.2rem;
+}
+.timeline-item-small .triangle-small {
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 20px solid #234d20;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    top: 7.6rem;
+    z-index: 3;
+}
+
+@media (min-width: 769px){
+    #timeline-sect{ display: block; }
+    #timeline-small-dev{ display: none; }
+}
+@media (max-width: 768px) {
+    #timeline-sect{ display: none; }
+    #timeline-small-dev{ display: block; }
+    hr {
+        margin-top: 40px;
+        border: 2px solid black;
+        position: relative;
+    }
+    .marker-container {
+        display: flex;
+        justify-content: center;
+        gap: 35%;
+        position: relative;
+        bottom: 1.5rem;
+    }
+    .marker-container div {
+        padding: 1px;
+        border: 2px solid black;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background-color: white;
+    }
+}
+
+/* Modern Scrollbar Styling */
+#timeline-sect::-webkit-scrollbar {
+    height: 8px; /* slim height */
+}
+
+#timeline-sect::-webkit-scrollbar-track {
+    background: #c9df8a; /* light green track */
+    border-radius: 10px;
+}
+
+#timeline-sect::-webkit-scrollbar-thumb {
+    background: #234d20; /* dark green thumb */
+    border-radius: 10px;
+}
+
+#timeline-sect::-webkit-scrollbar-thumb:hover {
+    background: #1a3a18; /* slightly darker on hover */
+}
+
+/* Firefox support */
+#timeline-sect {
+    scrollbar-width: thin;               /* slim */
+    scrollbar-color: #234d20 #c9df8a;    /* thumb | track */
+}
+
+</style>
+
+
+<section id="timeline-sect">
+  <div class="timeline">
+    <!-- Original 3 events -->
+    <div class="timeline-item">
+      <div class="triangle"></div>
+      <p style="background-color: #234d20;">Registration Begins</p>
+      <h3>06 Sept, 2025</h3>
+    </div>
+    <div class="timeline-item">
+      <div class="triangle" style="border-bottom-color: #c9df8a;"></div>
+      <p style="background-color: #c9df8a; color: black;">Registration Ends</p>
+      <h3>30 Sept, 2025 <br/><strong>(Extended)</strong></h3>
+    </div>
+    <div class="timeline-item">
+      <div class="triangle"></div>
+      <p style="background-color: #234d20;">Conference Date</p>
+      <h3>11 & 12 Oct, 2025</h3>
+    </div>
+
+    <!-- New 3 events -->
+    <div class="timeline-item">
+      <div class="triangle" style="border-bottom-color: #c9df8a;"></div>
+      <p style="background-color: #c9df8a; color: black;">Paper Submission</p>
+      <h3>20 Oct, 2025</h3>
+    </div>
+    <div class="timeline-item">
+      <div class="triangle"></div>
+      <p style="background-color: #234d20;">Results Announcement</p>
+      <h3>05 Nov, 2025</h3>
+    </div>
+    <div class="timeline-item">
+      <div class="triangle" style="border-bottom-color: #c9df8a;"></div>
+      <p style="background-color: #c9df8a; color: black;">Final Ceremony</p>
+      <h3>10 Nov, 2025</h3>
+    </div>
+  </div>
+</section>
+
+
+<!-- Small devices stacked version -->
+<section id="timeline-small-dev" style="margin-top: 30px;">
+  <div class="timeline-small">
+    <div class="timeline-item-small">
+      <div class="triangle-small"></div>
+      <p style="background-color: #234d20;">Registration Begins</p>
+      <h3>06 Sept, 2025</h3>
+    </div>
+    <div class="timeline-item-small">
+      <div class="triangle-small" style="border-bottom-color: #c9df8a;"></div>
+      <p style="background-color: #c9df8a; color: black;">Registration Ends</p>
+      <h3>30 Sept, 2025 <strong>(Extended)</strong></h3>
+    </div>
+    <div class="timeline-item-small">
+      <div class="triangle-small"></div>
+      <p style="background-color: #234d20;">Conference Date</p>
+      <h3>11 & 12 Oct, 2025</h3>
+    </div>
+    <div class="timeline-item-small">
+      <div class="triangle-small" style="border-bottom-color: #c9df8a;"></div>
+      <p style="background-color: #c9df8a; color: black;">Paper Submission</p>
+      <h3>20 Oct, 2025</h3>
+    </div>
+    <div class="timeline-item-small">
+      <div class="triangle-small"></div>
+      <p style="background-color: #234d20;">Results Announcement</p>
+      <h3>05 Nov, 2025</h3>
+    </div>
+    <div class="timeline-item-small">
+      <div class="triangle-small" style="border-bottom-color: #c9df8a;"></div>
+      <p style="background-color: #c9df8a; color: black;">Final Ceremony</p>
+      <h3>10 Nov, 2025</h3>
+    </div>
+  </div>
+</section>

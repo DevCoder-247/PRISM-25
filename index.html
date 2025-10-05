@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/image/Prism-25.png">
+    <title>Home</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /> -->
+    <!-- <script src="https://unpkg.com/lucide@latest"></script> -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #234d20;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .image-slider {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-slider img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: none;
+        }
+
+        .bold {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .image-slider img.active {
+            display: block;
+        }
+
+        .image-slider .fa {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .image-slider .fa-chevron-left {
+            left: 10px;
+        }
+
+        .image-slider .fa-chevron-right {
+            right: 10px;
+        }
+
+        .slider-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(0, 0, 0);
+            text-align: center;
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* General styles */
+        .fun-facts {
+            background: url('') no-repeat center center/cover;
+            background-size: cover;
+            color: #000000;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .fun-facts .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: #234d20;
+        }
+
+        .fun-facts .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .fun-facts .single-fun {
+            background: #c9df8a;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .fun-facts .single-fun:hover {
+            transform: scale(1.1);
+        }
+
+        .fun-facts .single-fun i {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #d6b842;
+            animation: icon-bounce 2s infinite;
+        }
+
+        .fun-facts .single-fun .content {
+            font-size: 18px;
+        }
+
+        .fun-facts .single-fun .counter {
+            font-size: 40px;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Counter animation */
+        @keyframes counter {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fun-facts .single-fun .counter {
+            animation: counter 2s ease-in-out;
+        }
+
+        @keyframes icon-bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* page seperation */
+        .separation {
+            height: 7px;
+            background-color: #234d20;
+            position: relative;
+            z-index: 20;
+        }
+
+        /* sponsers*/
+        .sponsors-section {
+            /* max-width: 1000px; */
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px 60px;
+            background-color: rgba(35, 77, 32, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .sponsors-section h2 {
+            color: white;
+        }
+
+        .sponsors-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .sponsor {
+            flex: 1 1 calc(33.333% - 40px);
+            max-width: calc(33.333% - 40px);
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .sponsor img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .sponsor:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sponsor {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+
+            #conf-logo {
+                margin-left: -1.5rem !important;
+            }
+
+            .info-icon {
+                position: absolute;
+                right: 80px;
+                padding: 10px;
+                background-color: #234d20;
+                border-radius: 50%;
+                border: 2px solid #234d20;
+                font-size: 14px;
+                font-weight: bold;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 4;
+                animation: bounce 1.5s infinite ease-in-out;
+            }
+
+            .modal-content {
+                width: 250px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sponsor {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .info-icon {
+                position: absolute;
+                /* right: 90px; */
+                padding: 6px 12px;
+                background-color: #234d20;
+                border-radius: 50%;
+                border: 2px solid #234d20;
+                font-size: 14px;
+                font-weight: bold;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 4;
+                animation: bounce 1.5s infinite ease-in-out;
+            }
+
+            .modal-content {
+                width: 250px;
+                text-align: center;
+            }
+        }
+
+        /* img dots */
+        .container {
+            width: 100%;
+        }
+
+        .text-section {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .background-text {
+            position: absolute;
+            width: 100%;
+            padding: 60px 30px;
+            box-sizing: border-box;
+            color: white;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /*         .background-text .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        } */
+
+        .background-text h1,
+        .background-text p {
+            position: relative;
+            z-index: 2;
+            margin: 2.1rem 0;
+            line-height: 2.2rem;
+        }
+
+        .image-slider img.active {
+            display: block;
+        }
+
+        .dots {
+            text-align: center;
+            position: relative;
+            bottom: -10px;
+            width: 100%;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #000000;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.6s ease;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+        .hero-buttons button {
+            width: 12rem;
+            height: 4rem;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: 500;
+            background-color: #c9df8a;
+        }
+
+        .hero-buttons button:hover {
+            background-color: #234d20;
+            color: white;
+        }
+
+        #reg-btn {
+            background-color: #234d20;
+            color: white;
+        }
+
+        #reg-btn:hover {
+            background-color: #c9df8a;
+            color: black;
+        }
+
+        /*Timeline*/
+        #timeline-sect {
+            width: 75%;
+            margin: 6rem auto 3rem;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 18%;
+            text-align: center;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.1);
+        }
+
+        .timeline-item h3 {
+            color: black;
+            padding: 10px;
+            margin: 4rem 0 1rem 0rem;
+            border-radius: 5px;
+            position: absolute;
+        }
+
+        .timeline-item p {
+            background-color: #555;
+            color: white;
+            padding: 2rem 0rem;
+            border-radius: 5px;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .timeline-item .triangle {
+            width: 0;
+            height: 0;
+            border-left: 35px solid transparent;
+            border-right: 35px solid transparent;
+            border-bottom: 20px solid #234d20;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(180deg);
+            margin-top: 4.5rem;
+            z-index: 3;
+        }
+
+        hr {
+            margin-top: 40px;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        .marker-container {
+            display: flex;
+            justify-content: center;
+            gap: 35%;
+            position: relative;
+            bottom: 1.5rem;
+        }
+
+        .marker-container div {
+            padding: 1px;
+            border: 2px solid black;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+        }
+
+        /* Timeline for small devices */
+        #timeline-small-dev {
+            width: 70%;
+            margin: 5rem auto -2rem;
+        }
+
+        .timeline-small {
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item-small {
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .timeline-item-small h3 {
+            color: black;
+            padding: 10px;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .timeline-item-small p {
+            background-color: #555;
+            color: white;
+            padding: 2rem 0rem;
+            border-radius: 5px;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .timeline-item-small .triangle-small {
+            width: 0;
+            height: 0;
+            border-left: 35px solid transparent;
+            border-right: 35px solid transparent;
+            border-bottom: 20px solid #234d20;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(180deg);
+            top: 7.6rem;
+            z-index: 3;
+        }
+
+        /* Exclamation icon */
+        .timeline-item .info-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 22px;
+            height: 22px;
+            background-color: #234d20;
+            border-radius: 50%;
+            border: 2px solid #234d20;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 4;
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+
+        .timeline-item .info-icon:hover {
+            background-color: #c9df8a;
+            color: black;
+            border-color: black;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 50%;
+            position: relative;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: red;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* speaker */
+        .container {
+            width: 100%;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        #speakers {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+        }
+
+        .speaker {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .speaker-photo {
+            flex: 1;
+            text-align: center;
+            animation: slideInLeft 1s ease-out;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+
+        .speaker-photo img {
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .speaker-info {
+            flex: 2;
+            padding-left: 20px;
+        }
+
+        .speaker-info h2 {
+            margin-top: 0;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .speaker-photo.slide-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        /* Base circular icon */
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 22px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Individual icon gradients */
+        .social-icon.linkedin {
+            background: linear-gradient(135deg, #0077b5, #0a66c2);
+        }
+
+        .social-icon.twitter {
+            background: linear-gradient(135deg, #1da1f2, #0d8aec);
+        }
+
+        .social-icon.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+        }
+
+        /* Hover effect with smooth lift and glow */
+        .social-icon:hover {
+            transform: scale(1.25) translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Optional shimmer effect */
+        .social-icon::after {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -120%;
+            background: rgba(255, 255, 255, 0.15);
+            transform: rotate(25deg);
+            transition: left 0.4s ease;
+        }
+
+        .social-icon:hover::after {
+            left: 120%;
+        }
+
+        /* Icon color */
+        .social-icon i {
+            color: #fff;
+            transition: transform 0.3s ease;
+            padding-bottom: 7px;
+        }
+
+        /* Icon hover scaling */
+        .social-icon:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .social-links {
+                gap: 12px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+        }
+
+
+
+        /* FAQ Section Styling */
+        .faq-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .faq-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-heading h2 {
+            font-size: 36px;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Accordion Styling */
+        .accordion {
+            border: none;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            background: #c9df8a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question h3 {
+            font-size: 20px;
+            color: #333;
+            margin: 0;
+        }
+
+        .faq-toggle {
+            background: none;
+            border: none;
+            width: 1000%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            color: #333;
+            outline: none;
+        }
+
+        .faq-toggle:focus {
+            outline: none;
+        }
+
+        .faq-toggle i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-toggle[aria-expanded="true"] i {
+            transform: rotate(180deg);
+        }
+
+
+        .faq-answer {
+            padding: 15px 20px;
+            background: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .faq-heading h2 {
+                font-size: 28px;
+            }
+
+            .faq-question h3 button {
+                font-size: 15px;
+                margin-left: -0.5rem;
+                margin-right: 0.5rem;
+            }
+
+            .faq-toggle {
+                font-size: 16px;
+            }
+
+            .background-text {
+                padding: 10px;
+                font-size: 1rem;
+            }
+
+            .background-text p {
+                line-height: 1.8rem;
+            }
+
+            #timeline-sect {
+                display: none;
+            }
+
+            #timeline-small-dev {
+                display: block;
+            }
+
+            #conf-logo {
+                margin-left: -2.5rem;
+            }
+
+            .ngo-heading {
+                margin-left: -1rem !important;
+            }
+
+            .hero-buttons {
+                margin-top: 100rem;
+            }
+
+            .modal-content {
+                width: 250px;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 769px) {
+            #timeline-sect {
+                display: block;
+            }
+
+            #timeline-small-dev {
+                display: none;
+            }
+
+        }
+
+        /* button for broucher */
+
+        .brochure-btn {
+            /* display: block; */
+            padding: 10px 24px;
+            background-color: #c9df8a;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* margin-left: 500px; */
+            margin-bottom: -2rem;
+            margin-top: 2rem;
+            text-align: center;
+            height: fit-content;
+        }
+
+        .brochure-btn:hover {
+            background-color: #234d20;
+            color: white;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .brochure-btn {
+                width: 80%;
+                padding: 10px 20px;
+                font-size: 16px;
+                margin-left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brochure-btn {
+                width: 90%;
+                margin-left: none;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .brochure-btn::after {
+                font-size: 10px;
+            }
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body style="background-color: #fff;">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/image/Prism-25.png" alt="Logo 1" height="110" id="conf-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item  dropdown">
+                        <a class="nav-link dropdown-toggle" href="./events.html" id="eventsDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            onclick="window.location.href='./events.html';">
+                            Events
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="eventsDropdown">
+                            <a class="dropdown-item" href="#tenure-presentation">Tenure Presentation</a>
+                            <a class="dropdown-item" href="#round-table">Round-Table Conference</a>
+                            <a class="dropdown-item" href="#ideathon">Ideathon (Social Track)</a>
+                            <a class="dropdown-item" href="#sociothon">Sociothon (Technical Track)</a>
+                            <a class="dropdown-item" href="#kala-kriti">Kala Kriti</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./registration.html">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contactUs.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-logos">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/image/swdlogo.png" alt="Logo 2" height="80">
+                </a>
+                <a id="nss-logo" class="navbar-brand" href="#">
+                    <img src="./assets/image/nss.png" alt="Logo 3" height="80">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <br>
+    <section id="home" class="container">
+        <!-- Image Slider -->
+        <div class="image-slider">
+            <div class="background-text">
+                <div class="overlay"></div>
+                <h1 class="animated-text">PRISM 2025: Public Reform for Innovation and Sustainability Management</h1>
+                <p class="bold"><small>Organized in In-person (Offline mode) by</small> <br>
+                    Social Welfare and Development Committee <br>
+                    <small>Vishwakarma Institute of Technology, Pune</small>
+                    <br>
+                    <strong>October 11 & 12, 2025</strong>
+                </p>
+                <div class="hero-buttons">
+                    <a href="./events.html"><button id="events-btn">Events</button></a>
+                    <a href="./registration.html"><button id="reg-btn">Registration</button></a>
+                </div>
+            </div>
+            <i class="fas fa-chevron-left" onclick="prevSlide()"></i>
+            <i class="fas fa-chevron-right" onclick="nextSlide()"></i>
+            <img src="https://swd.vit.edu/img/pro.jpg" class="slide active" alt="Slide 1">
+            <img src="https://swd.vit.edu/img/slider.jpg" class="slide" alt="Slide 2">
+            <img src="https://swd.vit.edu/flagship/blood-d/imgs/IMG_5464.webp" class="slide" alt="Slide 3">
+        </div>
+
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <section id="timeline-sect">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="triangle"></div>
+                <p style="background-color: #234d20;">Registration Begins</p>
+                <h3>06 Sept, 2025</h3>
+            </div>
+
+            <div class="timeline-item">
+                <div class="triangle" style="border-bottom-color: #c9df8a; margin-top: 6rem;"></div>
+                <p style="background-color: #c9df8a; color: black;">NSS <br> Registration Ends</p>
+                <h3 style="margin: 3rem 0rem 1rem 0rem;">08 Oct, 2025</h3>
+            </div>
+
+            <div class="timeline-item">
+                <div class="triangle" style="margin-top: 5.9rem;"></div>
+                <p style="background-color: #234d20;">VIT students Registration ends</p>
+                <h3 style="margin: 3rem 0rem 1rem 0rem;">10 Oct, 2025</h3>
+            </div>
+
+            <div class="timeline-item">
+                <div class="triangle" style="border-bottom-color: #c9df8a;"></div>
+                <p style="background-color: #c9df8a; color: black;">Conference Date</p>
+                <h3>11 & 12 Oct, 2025</h3>
+            </div>
+
+            <div class="timeline-item">
+                <div class="triangle"></div>
+                <p style="background-color: #234d20;">Award Ceremony</p>
+                <h3>12 Oct, 2025</h3>
+            </div>
+        </div>
+
+        <div>
+            <hr>
+            <div class="marker-container">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline-small-dev">
+        <div class="timeline-small">
+            <div class="timeline-item-small">
+                <div class="triangle-small"></div>
+                <p style="background-color: #234d20;">Registration Begins</p>
+                <h3>06 Sept, 2025</h3>
+            </div>
+
+            <div class="timeline-item-small">
+                <div class="triangle-small" style="border-bottom-color: #c9df8a;"></div>
+                <p style="background-color: #c9df8a; color: black;">NSS <br> Registration Ends</p>
+                <h3>08 Oct, 2025 <strong>(Extended)</strong></h3>
+            </div>
+
+            <div class="timeline-item-small">
+                <div class="triangle-small"></div>
+                <p style="background-color: #234d20;">Conference Date</p>
+                <h3>11 & 12 Oct, 2025</h3>
+            </div>
+
+            <div class="timeline-item-small">
+                <div class="triangle-small" style="border-bottom-color: #c9df8a;"></div>
+                <p style="background-color: #c9df8a; color: black;">Ideathon Submissions</p>
+                <h3>09 Oct, 2025</h3>
+            </div>
+
+            <div class="timeline-item-small">
+                <div class="triangle-small"></div>
+                <p style="background-color: #234d20;">Award Ceremony</p>
+                <h3>12 Oct, 2025</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>IMPORTANT DEADLINES </h2>
+            <p> <strong>10 Sept, 2025</strong>.
+                Please ensure you complete your application before this date.</p>
+        </div>
+    </div> -->
+
+
+    <!-- Guest Talks  -->
+    <div class="ngo-heading"
+        style="display: flex; justify-content: center; margin-left: -4rem; margin-top: 6rem; text-align: center;">
+        <!-- <img src="./assets/image/subtitle-img-green.png" width="32" height="7" alt=""> -->
+
+        <h2 class="headline">
+            <strong> Panel Discussion (Convention) By </strong>
+        </h2>
+    </div>
+    <!-- <section id="speakers" class="container">
+  <div class="speaker">
+    <div class="speaker-photo">
+      <img
+        src="https://starsunfolded.com/wp-content/uploads/2021/06/Medha-Patkar.jpg"
+        alt="Speaker Photo"
+        class="photo"
+      />
+    </div>
+    <div class="speaker-info">
+      <h2>Medha Patkar</h2>
+      <p>
+        Medha Patkar is a renowned social activist known for her work in the
+        Narmada Bachao Andolan and commitment to social justice and
+        environmental sustainability.
+      </p>
+      <div class="social-links">
+        <a href="#" target="_blank" class="social-icon linkedin"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="#" target="_blank" class="social-icon twitter"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="#" target="_blank" class="social-icon instagram"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+    <section id="speakers" class="container">
+        <div class="speaker">
+            <div class="speaker-photo">
+                <img src="./assets/image/Deepankar Patil.png" alt="Speaker Photo" class="photo" />
+            </div>
+            <div class="speaker-info">
+                <h2>Deepankar Patil</h2>
+                <p>
+                    Medha Patkar is a renowned social activist known for her work in the
+                    Narmada Bachao Andolan and her commitment to social justice and
+                    environmental sustainability.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/dsrpatil/?hl=en" target="_blank" class="social-icon instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <!-- <a href="https://google.com" target="_blank" class="social-icon linkedin">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="speakers" class="container">
+        <div class="speaker">
+            <div class="speaker-photo">
+                <img src="./assets/image/Mayuresh Gujar (2).png" alt="Speaker Photo" class="photo" />
+            </div>
+            <div class="speaker-info">
+                <h2>Mayuresh Gujar</h2>
+                <p>
+                    Medha Patkar is a renowned social activist known for her work in the
+                    Narmada Bachao Andolan and her commitment to social justice and
+                    environmental sustainability.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/mayuusic_vines_/?hl=en" target="_blank"
+                        class="social-icon instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <!-- <a href="https://google.com" target="_blank" class="social-icon linkedin">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a> -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="speakers" class="container">
+        <div class="speaker">
+            <div class="speaker-photo">
+                <img src="./assets/image/Prasad Gawade.png" alt="Speaker Photo" class="photo" />
+            </div>
+            <div class="speaker-info">
+                <h2>Prasad Gawade</h2>
+                <p>
+                    Medha Patkar is a renowned social activist known for her work in the
+                    Narmada Bachao Andolan and her commitment to social justice and
+                    environmental sustainability.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/konkaniranmanus/" target="_blank" class="social-icon instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <!-- <a href="https://google.com" target="_blank" class="social-icon linkedin">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a> -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="speakers" class="container">
+        <div class="speaker">
+            <div class="speaker-photo">
+                <img src="https://starsunfolded.com/wp-content/uploads/2021/06/Medha-Patkar.jpg" alt="Speaker Photo"
+                    class="photo" />
+            </div>
+            <div class="speaker-info">
+                <h2>Medha Patkar</h2>
+                <p>
+                    Medha Patkar is a renowned social activist known for her work in the
+                    Narmada Bachao Andolan and her commitment to social justice and
+                    environmental sustainability.
+                </p>
+                <div class="social-links">
+                    <a href="#" target="_blank" class="social-icon linkedin"><i
+                            class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" class="social-icon twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" target="_blank" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <div id="fun-facts" class="fun-facts section overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-fun">
+                        <i class="icofont icofont-home"></i>
+                        <div class="content">
+                            <span class="counter" data-target="10" style="font-size: 5rem;">0</span>
+                            <p>loream</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-fun">
+                        <i class="icofont icofont-user-alt-3"></i>
+                        <div class="content">
+                            <span class="counter" data-target="10" style="font-size: 5rem;">0</span>
+                            <p>loream</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-fun">
+                        <i class="icofont-simple-smile"></i>
+                        <div class="content">
+                            <span class="counter" data-target="10" style="font-size: 5rem;">0</span>
+                            <p>loream</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-fun">
+                        <i class="icofont icofont-table"></i>
+                        <div class="content">
+                            <span class="counter" data-target="5" style="font-size: 5rem;">0</span>
+                            <p>Years of Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="separation"></div> -->
+
+
+    <!-- <div class="sponsors-section">
+        <h2>Our Sponsors</h2>
+        <div class="sponsors-container">
+            <div class="sponsor">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWL-Z3rWhLx1kTSD8B0Fa0KH0iPfBt2rgJ-g&s"
+                    alt="Sponsor 1">
+            </div>
+            <div class="sponsor">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWL-Z3rWhLx1kTSD8B0Fa0KH0iPfBt2rgJ-g&s"
+                    alt="Sponsor 2">
+            </div>
+            <div class="sponsor">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWL-Z3rWhLx1kTSD8B0Fa0KH0iPfBt2rgJ-g&s"
+                    alt="Sponsor 3">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="separation"></div> -->
+
+    <div class="card-container" style="display: block;">
+
+        <div class="ngo-heading"
+            style="display: flex; justify-content: center; margin-left: -4rem; text-align: center  ;">
+            <!-- <img src="./assets/image/subtitle-img-green.png" width="32" height="7" alt=""> -->
+
+            <h2 class="headline">
+                <strong> Exclusive NGO talks by </strong>
+            </h2>
+        </div>
+        <div class="ngos " style="margin: 0% 5% 0.5%; flex: auto;">
+            <div class="card">
+                <div class="card-image">
+                    <img src="./assets/image/vanrai.jpg" alt="Vanrai Foundation Logo" />
+                    <div class="card-hover-info">
+                        <p>
+                            The Vanarai Foundation works to combat climate change by empowering rural communities
+                            through sustainable development and environmental conservation.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-name">
+                    <h3>
+                        <a href="https://vanraifoundation.org/" target="_blank">Vanarai Foundation</a>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="./assets/image/naam.png" alt="Naam Foundation Logo" />
+                    <div class="card-hover-info">
+                        <p>
+                            Naam Foundation works for the welfare of farmers in drought-prone areas, focusing on rural
+                            development by addressing issues like infrastructure and education.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-name">
+                    <h3>
+                        <a href="https://www.naamfoundation.org/" target="_blank">Naam Foundation</a>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="./assets/image/1M1B_Logo.png" alt="1M1B Logo" />
+                    <div class="card-hover-info">
+                        <p>
+                            1M1B (1 Million for 1 Billion) is a UN-accredited organization that empowers youth to become
+                            future-ready problem solvers, creating a real-world impact.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-name">
+                    <h3>
+                        <a href="https://www.1m1b.org/" target="_blank">1 Million for 1 Billion</a>
+                    </h3>
+                </div>
+            </div>
+
+
+            <!-- 4th NGO -->
+            <div class="card">
+                <div class="card-image" style="background-color: black;">
+                    <img src="./assets/image/TFI_logo_primary_white.png" alt="NGO Image" />
+                    <div class="card-hover-info">
+                        <p>
+                            Teach For India works to eliminate educational inequity in India by
+                            placing Fellows in under-resourced schools.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-name">
+                    <h3>
+                        <a href="https://www.teachforindia.org/" target="_blank">Teach For India</a>
+                    </h3>
+                </div>
+            </div>
+
+
+
+            <!-- 5th NGO -->
+            <!-- <div class="card">
+                <div class="card-image">
+                    <img src="./assets/image/child-orphanage-ngo.webp" alt="NGO Image">
+                    <div class="card-hover-info">
+                        <p>Short info about the NGO.</p>
+                    </div>
+                </div>
+                <div class="card-name">
+                    <h3>Sampark Balgram</h3>
+                </div>
+            </div> -->
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <a href="PRISM2025_Brochure.pdf" download="PRISM2025_Brochure.pdf" class="brochure-btn">Download Brochure
+                here!!</a>
+        </div>
+    </div>
+
+    <div class="separation" style="margin-top: 6rem;"></div>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-heading">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div id="faqAccordion" class="accordion">
+                <div class="faq-item">
+                    <div class="faq-question" id="faqOne">
+                        <h3>
+                            <button class="faq-toggle" data-toggle="collapse" data-target="#answerOne"
+                                aria-expanded="true" aria-controls="answerOne">
+                                What is PRISM 2025?
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="answerOne" class="collapse show" aria-labelledby="faqOne" data-parent="#faqAccordion">
+                        <div class="faq-answer">
+                            <p>It is a platform to unite individuals dedicated to societal betterment to share impactful
+                                ideas for social welfare.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" id="faqTwo">
+                        <h3>
+                            <button class="faq-toggle" class="collapsed" data-toggle="collapse" data-target="#answerTwo"
+                                aria-expanded="false" aria-controls="answerTwo">
+                                How many members can be in a team?
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="answerTwo" class="collapse" aria-labelledby="faqTwo" data-parent="#faqAccordion">
+                        <div class="faq-answer">
+                            <p>A team must consist of exactly 4 members.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" id="faqThree">
+                        <h3>
+                            <button class="faq-toggle" class="collapsed" data-toggle="collapse"
+                                data-target="#answerThree" aria-expanded="false" aria-controls="answerThree">
+                                What is the purpose of SW&D?
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="answerThree" class="collapse" aria-labelledby="faqThree" data-parent="#faqAccordion">
+                        <div class="faq-answer">
+                            <p>Social Welfare and Development Committee (SW&D) of VIT Pune is dedicated to making a
+                                positive impact through compassionate initiatives. The team works across various
+                                domains, empowering vulnerable communities and fostering hope.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--                 <div class="faq-item">
+                    <div class="faq-question" id="faqFour">
+                        <h3>
+                            <button class="faq-toggle" class="collapsed" data-toggle="collapse"
+                                data-target="#answerFour" aria-expanded="false" aria-controls="answerFour">
+                                What is the purpose of SW&D?
+                                <i class="fa fa-chevron-down"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div id="answerFour" class="collapse" aria-labelledby="faqFour" data-parent="#faqAccordion">
+                        <div class="faq-answer">
+                            <p>The purpose of SW&D is to promote social welfare and development through various
+                                initiatives and community projects.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+
+    <div class="separation"></div>
+
+    <script>
+        function toggleFaq(index) {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems[index].classList.toggle('active');
+        }
+    </script>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./index.php">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./about.html">About</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./events.html">Events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Important Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="./registration.html">Registrations</a>
+                            </li>
+                            <!-- <li><i class="bi bi-chevron-right"></i> <a href="./Sponsors.html">Sponsors</a></li> -->
+                            <li><i class="bi bi-chevron-right"></i> <a href="./contactUs.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-info">
+                        <h4>SW&D</h4>
+                        <p style="text-align: justify;">Social Welfare and Development Committee with the motto of
+                            "Empowering Society, Transforming
+                            Lives" has been helping society for several years and continues to do so in any
+                            circumstance.
+                        </p><br>
+                        <div class="social-links">
+                            <!-- <img src="./assets/image/swdlogo.png" alt="Logo" style="padding-right: 6.2rem; padding-left: 0.2rem;">      -->
+                            <a href="https://twitter.com/vit_socials" target="_blank" class="twitter"><i
+                                    class="bi bi-twitter"></i></a>
+                            <a href="https://www.facebook.com/vitsocials" target="_blank" class="facebook"><i
+                                    class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/vitsocials/" target="_blank" class="instagram"><i
+                                    class="bi bi-instagram"></i></a>
+                            <a href="https://www.youtube.com/channel/UCJnaNm8Ns08rUIhsdFM2fhA" target="_blank"
+                                class="google-plus"><i class="bi bi-youtube"></i></a>
+                            <a href="https://www.linkedin.com/company/vit-social-welfare-development/" target="_blank"
+                                class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                        <br>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                © 2025-26 Social Welfare &amp; Development Committee, VIT Pune.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        let slideIndex = 0;
+        let slides = document.querySelectorAll('.slide');
+        let dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function currentSlide(index) {
+            slideIndex = index - 1;
+            showSlide(slideIndex);
+        }
+
+        function autoSlide() {
+            nextSlide();
+            setTimeout(autoSlide, 5000); // Change slide every 5 seconds
+        }
+
+        // Initialize the slider
+        autoSlide();
+
+    </script>
+
+    <script>
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = Math.floor((timer % (60 * 60 * 24)) / (60 * 60));
+                minutes = Math.floor((timer % (60 * 60)) / 60);
+                seconds = Math.floor(timer % 60);
+
+                display.textContent = hours + "h " + minutes + "m " + seconds + "s ";
+
+                if (--timer < 0) {
+                    display.textContent = "Registration closed";
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let fiveHours = 60 * 60 * 5;
+            let displays = document.querySelectorAll('.registration-time');
+
+            displays.forEach(display => {
+                startTimer(fiveHours, display);
+            });
+        };
+    </script>
+
+    <script>
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const speakerPhoto = document.querySelector('.speaker-photo');
+        //     const section = document.getElementById('speakers');
+
+        //     if (speakerPhoto && section) {
+        //         const observer = new IntersectionObserver(entries => {
+        //             entries.forEach(entry => {
+        //                 if (entry.isIntersecting) {
+        //                     speakerPhoto.classList.add('slide-in');
+        //                     observer.unobserve(section); // Stop observing after the animation triggers
+        //                 }
+        //             });
+        //         });
+
+        //         observer.observe(section);
+        //     } else {
+        //         console.error('Speaker section or photo element not found');
+        //     }
+        // });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const speakerPhotos = document.querySelectorAll('.speaker-photo');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('slide-in');
+                        observer.unobserve(entry.target); // Stop observing once animation is triggered
+                    }
+                });
+            });
+
+            speakerPhotos.forEach(photo => observer.observe(photo));
+        });
+
+
+
+    </script>
+
+    <script>
+        document.querySelectorAll('.faqbox').forEach(faq => {
+            faq.addEventListener('click', () => {
+                faq.classList.toggle('active');
+            });
+        });
+
+    </script>
+    <script>
+        function toggleFaq(index) {
+            let faqAnswers = document.querySelectorAll('.faq-answer');
+            let faqButtons = document.querySelectorAll('.faq-question');
+
+            if (faqAnswers[index].style.maxHeight) {
+                faqAnswers[index].style.maxHeight = null;
+                faqButtons[index].style.backgroundColor = "#007BFF";
+            } else {
+                faqAnswers.forEach(answer => answer.style.maxHeight = null);
+                faqButtons.forEach(button => button.style.backgroundColor = "#007BFF");
+
+                faqAnswers[index].style.maxHeight = faqAnswers[index].scrollHeight + "px";
+                faqButtons[index].style.backgroundColor = "#0056b3";
+            }
+        }
+    </script>
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+            let hasAnimated = false;
+
+            const updateCount = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+
+                const increment = target / 100;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(() => updateCount(counter), 200);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            const startCounting = () => {
+                if (!hasAnimated) {
+                    counters.forEach(counter => {
+                        updateCount(counter);
+                    });
+                    hasAnimated = true; // Ensure counting only happens once
+                }
+            };
+
+            const checkScroll = () => {
+                const section = document.getElementById('fun-facts');
+                const sectionPosition = section.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight;
+
+                if (sectionPosition < screenPosition) {
+                    startCounting();
+                    window.removeEventListener('scroll', checkScroll);
+                }
+            };
+
+            window.addEventListener('scroll', checkScroll);
+        });
+
+    </script>
+    <script>
+        function openModal() {
+            document.getElementById("infoModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("infoModal").style.display = "none";
+        }
+        // Optional: close modal when clicking outside content
+        window.onclick = function (event) {
+            let modal = document.getElementById("infoModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Font Awesome CDN for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Social media icons for guest -->
+    <!-- <script>lucide.createIcons();</script> -->
+
+</body>
+
+</html>
