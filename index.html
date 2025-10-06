@@ -18,7 +18,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #234d20;
+            /* background-color: #234d20; */
+            background-color: #1A3D63;
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            color: #0A1931;
+            ;
         }
 
         .container {
@@ -191,7 +197,8 @@
         /* page seperation */
         .separation {
             height: 7px;
-            background-color: #234d20;
+            /* background-color: #234d20; */
+            background-color: #1A3D63;
             position: relative;
             z-index: 20;
         }
@@ -251,9 +258,11 @@
                 position: absolute;
                 right: 80px;
                 padding: 10px;
-                background-color: #234d20;
+                /* background-color: #234d20; */
+                background-color: #1A3D63;
                 border-radius: 50%;
-                border: 2px solid #234d20;
+                /* border: 2px solid #234d20; */
+                border: 2px solid #1A3D63;
                 font-size: 14px;
                 font-weight: bold;
                 color: white;
@@ -374,21 +383,25 @@
             font-size: 1.2rem;
             cursor: pointer;
             font-weight: 500;
-            background-color: #c9df8a;
+            /* background-color: #c9df8a; */
+            background-color: #B3CFE5;
         }
 
         .hero-buttons button:hover {
-            background-color: #234d20;
+            /* background-color: #234d20; */
+            background-color: #1A3D63;
             color: white;
         }
 
         #reg-btn {
-            background-color: #234d20;
+            /* background-color: #234d20; */
+            background-color: #1A3D63;
             color: white;
         }
 
         #reg-btn:hover {
-            background-color: #c9df8a;
+            /* background-color: #c9df8a; */
+            background-color: #B3CFE5;
             color: black;
         }
 
@@ -440,7 +453,8 @@
             height: 0;
             border-left: 35px solid transparent;
             border-right: 35px solid transparent;
-            border-bottom: 20px solid #234d20;
+            /* border-bottom: 20px solid #234d20; */
+            border-bottom: 20px solid #1A3D63;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -510,7 +524,8 @@
             height: 0;
             border-left: 35px solid transparent;
             border-right: 35px solid transparent;
-            border-bottom: 20px solid #234d20;
+            /* border-bottom: 20px solid #234d20; */
+            border-bottom: 20px solid #1A3D63;
             position: relative;
             top: 50%;
             left: 50%;
@@ -656,6 +671,10 @@
             margin-top: 0;
         }
 
+        .speaker-info p {
+            text-align: justify;
+        }
+
         @keyframes slideInLeft {
             from {
                 transform: translateX(-100%);
@@ -793,7 +812,8 @@
         .faq-question {
             padding: 15px 20px;
             cursor: pointer;
-            background: #c9df8a;
+            /* background: #c9df8a; */
+            background: #B3CFE5;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -902,7 +922,8 @@
         .brochure-btn {
             /* display: block; */
             padding: 10px 24px;
-            background-color: #c9df8a;
+            /* background-color: #c9df8a; */
+            background-color: #B3CFE5;
             color: black;
             text-decoration: none;
             font-weight: bold;
@@ -917,7 +938,8 @@
         }
 
         .brochure-btn:hover {
-            background-color: #234d20;
+            /* background-color: #234d20; */
+            background-color: #1A3D63;
             color: white;
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
             transform: translateY(-3px);
@@ -928,7 +950,7 @@
                 width: 80%;
                 padding: 10px 20px;
                 font-size: 16px;
-                margin-left: 20px;
+                /* margin-left: 20px; */
             }
         }
 
@@ -950,6 +972,20 @@
             align-items: center;
             justify-content: center;
         }
+
+          /* Short version (hidden on desktop) */
+  .short { display: none; }
+
+  /* Responsive view — show concise intros on mobile */
+  @media (max-width: 768px) {
+    .full { display: none; }
+    .short { display: block; }
+    p {
+      font-size: 0.95rem;
+      padding: 12px;
+      /* background: #F6FAFD; */
+    }
+  }
     </style>
 </head>
 
@@ -1042,31 +1078,31 @@
         <div class="timeline">
             <div class="timeline-item">
                 <div class="triangle"></div>
-                <p style="background-color: #234d20;">Registration Begins</p>
-                <h3>06 Sept, 2025</h3>
+                <p style="background-color: #1A3D63;">Registration Begins</p>
+                <h3>01 Oct, 2025</h3>
             </div>
 
             <div class="timeline-item">
-                <div class="triangle" style="border-bottom-color: #c9df8a; margin-top: 6rem;"></div>
-                <p style="background-color: #c9df8a; color: black;">NSS <br> Registration Ends</p>
+                <div class="triangle" style="border-bottom-color: #B3CFE5; margin-top: 6rem;"></div>
+                <p style="background-color: #B3CFE5; color: black;">NSS <br> Registration Ends</p>
                 <h3 style="margin: 3rem 0rem 1rem 0rem;">08 Oct, 2025</h3>
             </div>
 
             <div class="timeline-item">
                 <div class="triangle" style="margin-top: 5.9rem;"></div>
-                <p style="background-color: #234d20;">VIT students Registration ends</p>
+                <p style="background-color: #1A3D63;">VIT students Registration ends</p>
                 <h3 style="margin: 3rem 0rem 1rem 0rem;">10 Oct, 2025</h3>
             </div>
 
             <div class="timeline-item">
-                <div class="triangle" style="border-bottom-color: #c9df8a;"></div>
-                <p style="background-color: #c9df8a; color: black;">Conference Date</p>
+                <div class="triangle" style="border-bottom-color: #B3CFE5;"></div>
+                <p style="background-color: #B3CFE5; color: black;">Conference Date</p>
                 <h3>11 & 12 Oct, 2025</h3>
             </div>
 
             <div class="timeline-item">
                 <div class="triangle"></div>
-                <p style="background-color: #234d20;">Award Ceremony</p>
+                <p style="background-color: #1A3D63;">Award Ceremony</p>
                 <h3>12 Oct, 2025</h3>
             </div>
         </div>
@@ -1085,31 +1121,31 @@
         <div class="timeline-small">
             <div class="timeline-item-small">
                 <div class="triangle-small"></div>
-                <p style="background-color: #234d20;">Registration Begins</p>
-                <h3>06 Sept, 2025</h3>
+                <p style="background-color: #1A3D63;">Registration Begins</p>
+                <h3>01 Oct, 2025</h3>
             </div>
 
             <div class="timeline-item-small">
-                <div class="triangle-small" style="border-bottom-color: #c9df8a;"></div>
-                <p style="background-color: #c9df8a; color: black;">NSS <br> Registration Ends</p>
-                <h3>08 Oct, 2025 <strong>(Extended)</strong></h3>
+                <div class="triangle-small" style="border-bottom-color: #B3CFE5; top: 9.4rem;"></div>
+                <p style="background-color: #B3CFE5; color: black;">NSS <br> Registration Ends</p>
+                <h3>08 Oct, 2025</h3>
             </div>
 
             <div class="timeline-item-small">
                 <div class="triangle-small"></div>
-                <p style="background-color: #234d20;">Conference Date</p>
+                <p style="background-color: #1A3D63; color: white;">Ideathon Submissions</p>
+                <h3>09 Oct, 2025</h3>
+            </div>
+            
+            <div class="timeline-item-small">
+                <div class="triangle-small" style="border-bottom-color: #B3CFE5;"></div>
+                <p style="background-color: #B3CFE5; color: black;">Conference Date</p>
                 <h3>11 & 12 Oct, 2025</h3>
             </div>
 
             <div class="timeline-item-small">
-                <div class="triangle-small" style="border-bottom-color: #c9df8a;"></div>
-                <p style="background-color: #c9df8a; color: black;">Ideathon Submissions</p>
-                <h3>09 Oct, 2025</h3>
-            </div>
-
-            <div class="timeline-item-small">
                 <div class="triangle-small"></div>
-                <p style="background-color: #234d20;">Award Ceremony</p>
+                <p style="background-color: #1A3D63;">Award Ceremony</p>
                 <h3>12 Oct, 2025</h3>
             </div>
         </div>
@@ -1168,17 +1204,23 @@
     <section id="speakers" class="container">
         <div class="speaker">
             <div class="speaker-photo">
-                <img src="./assets/image/Deepankar Patil.png" alt="Speaker Photo" class="photo" />
+                <img src="./assets/image/Prasad Gawade.png" alt="Speaker Photo" class="photo" />
             </div>
             <div class="speaker-info">
-                <h2>Deepankar Patil</h2>
-                <p>
-                    Medha Patkar is a renowned social activist known for her work in the
-                    Narmada Bachao Andolan and her commitment to social justice and
-                    environmental sustainability.
+                <h2>Prasad Gawade</h2>
+                <p class="full">
+                    Known as <strong>“Kokaniraanmanus”</strong>, Prasad Gawade is an environmentalist and advocate of sustainable living
+                    in the <strong>Konkan</strong> region.
+                    He promotes eco-tourism, cultural preservation, and harmony between nature and development through
+                    his initiatives.
+                    His work reflects a deep connection with the environment and rural community welfare.
+                </p>
+                <p class="short">
+                    Prasad Gawade, aka <strong>“Kokaniraanmanus”</strong>, promotes sustainable living and eco-tourism in the <strong>Konkan</strong>
+                    region.
                 </p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/dsrpatil/?hl=en" target="_blank" class="social-icon instagram">
+                    <a href="https://www.instagram.com/konkaniranmanus/" target="_blank" class="social-icon instagram">
                         <i class="bi bi-instagram"></i>
                     </a>
                     <!-- <a href="https://google.com" target="_blank" class="social-icon linkedin">
@@ -1187,6 +1229,7 @@
                     <a href="#" target="_blank" class="social-icon twitter">
                         <i class="bi bi-twitter"></i>
                     </a> -->
+
                 </div>
             </div>
         </div>
@@ -1198,10 +1241,16 @@
             </div>
             <div class="speaker-info">
                 <h2>Mayuresh Gujar</h2>
-                <p>
-                    Medha Patkar is a renowned social activist known for her work in the
-                    Narmada Bachao Andolan and her commitment to social justice and
-                    environmental sustainability.
+                <p class="full">
+                    Mayuresh Gujar is a digital creator and storyteller behind <strong>“Mayuusic Vines”</strong>.
+                    His engaging content blends humor, music, and everyday life experiences to deliver entertainment
+                    with a message.
+                    With a strong social media presence, he inspires positivity through relatable storytelling and
+                    short-form reels.
+                </p>
+                <p class="short">
+                    Mayuresh Gujar, creator of <strong>“Mayuusic Vines”</strong>, shares fun and meaningful stories through short videos
+                    and relatable humor.
                 </p>
                 <div class="social-links">
                     <a href="https://www.instagram.com/mayuusic_vines_/?hl=en" target="_blank"
@@ -1222,17 +1271,20 @@
     <section id="speakers" class="container">
         <div class="speaker">
             <div class="speaker-photo">
-                <img src="./assets/image/Prasad Gawade.png" alt="Speaker Photo" class="photo" />
+                <img src="./assets/image/Deepankar Patil.png" alt="Speaker Photo" class="photo" />
             </div>
             <div class="speaker-info">
-                <h2>Prasad Gawade</h2>
-                <p>
-                    Medha Patkar is a renowned social activist known for her work in the
-                    Narmada Bachao Andolan and her commitment to social justice and
-                    environmental sustainability.
+                <h2>Deepankar Patil</h2>
+                <p class="full">
+                    Deepankar Patil is an emerging <strong>creator</strong> and <strong>speaker</strong>  recognized for his insightful perspectives on
+                    modern challenges and social awareness.
+                    His work often emphasizes creativity, innovation, and meaningful community engagement.
+                </p>
+                <p class="short">
+                    Deepankar Patil is a <strong>creator</strong> and <strong>speaker</strong> focused on innovation and social awareness.
                 </p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/konkaniranmanus/" target="_blank" class="social-icon instagram">
+                    <a href="https://www.instagram.com/dsrpatil/?hl=en" target="_blank" class="social-icon instagram">
                         <i class="bi bi-instagram"></i>
                     </a>
                     <!-- <a href="https://google.com" target="_blank" class="social-icon linkedin">
@@ -1241,7 +1293,6 @@
                     <a href="#" target="_blank" class="social-icon twitter">
                         <i class="bi bi-twitter"></i>
                     </a> -->
-
                 </div>
             </div>
         </div>
@@ -1314,7 +1365,81 @@
     </div>
     <div class="separation"></div> -->
 
+    <div class="ngo-heading"
+        style="display: flex; justify-content: center; margin-left: -4rem; margin-top: 0rem; text-align: center;">
+        <!-- <img src="./assets/image/subtitle-img-green.png" width="32" height="7" alt=""> -->
 
+        <h2 class="headline">
+            <strong> Guest Session By </strong>
+        </h2>
+    </div>
+
+    <section id="speakers" class="container">
+        <div class="speaker">
+            <div class="speaker-photo">
+                <img src="./assets/image/Prachi Shevgaonkar.png" alt="Speaker Photo" class="photo" />
+            </div>
+            <div class="speaker-info">
+                <h2>Prachi Shevgaonkar</h2>
+                <p class="full">
+                    Founder of <strong>Cool The Globe</strong>, Prachi Shevgaonkar is a passionate climate activist and change-maker.
+                    She empowers individuals to take collective climate action through innovative initiatives.
+                    Recognized as a <strong>TEDx Speaker & Forbes 30</strong> Under 30 Asia honoree, her work bridges sustainability
+                    and youth leadership.
+                </p>
+                <p class="short">
+                    Prachi Shevgaonkar, founder of <strong>Cool The Globe</strong> , is a <strong>Forbes 30 Under 30 climate activist and TEDx
+                    speaker.</strong>
+                </p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/prachishevgaonkar/" target="_blank"
+                        class="social-icon instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <!-- <a href="https://google.com" target="_blank" class="social-icon linkedin">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a> -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="speakers" class="container">
+        <div class="speaker">
+            <div class="speaker-photo">
+                <img src="./assets/image/Shridhar Manakar.png" alt="Speaker Photo" class="photo" />
+            </div>
+            <div class="speaker-info">
+                <h2>Shridhar Mankar</h2>
+                <p class="full">
+                    Founder of <strong>5 Minutes Engineering</strong>, Shridhar Mankar is an educator simplifying complex engineering
+                    concepts through short, impactful videos.
+                    His mission is to make learning fun, fast, and accessible for students, inspiring the next
+                    generation of engineers with creative teaching methods.
+                </p>
+                <p class="short">
+                    Shridhar Mankar, founder of <strong>5 Minutes Engineering</strong>, simplifies engineering concepts through short,
+                    engaging lessons.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/5minutesengineering?igsh=MWI5OTNleWh5dHVzeA==" target="_blank"
+                        class="social-icon instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <!-- <a href="https://google.com" target="_blank" class="social-icon linkedin">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon twitter">
+                        <i class="bi bi-twitter"></i>
+                    </a> -->
+
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- <div class="sponsors-section">
         <h2>Our Sponsors</h2>
         <div class="sponsors-container">
@@ -1440,88 +1565,142 @@
 
     <div class="separation" style="margin-top: 6rem;"></div>
 
-    <section class="faq-section">
-        <div class="container">
-            <div class="faq-heading">
-                <h2>Frequently Asked Questions</h2>
-            </div>
-            <div id="faqAccordion" class="accordion">
-                <div class="faq-item">
-                    <div class="faq-question" id="faqOne">
-                        <h3>
-                            <button class="faq-toggle" data-toggle="collapse" data-target="#answerOne"
-                                aria-expanded="true" aria-controls="answerOne">
-                                What is PRISM 2025?
-                                <i class="fa fa-chevron-down"></i>
-                            </button>
-                        </h3>
-                    </div>
-                    <div id="answerOne" class="collapse show" aria-labelledby="faqOne" data-parent="#faqAccordion">
-                        <div class="faq-answer">
-                            <p>It is a platform to unite individuals dedicated to societal betterment to share impactful
-                                ideas for social welfare.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" id="faqTwo">
-                        <h3>
-                            <button class="faq-toggle" class="collapsed" data-toggle="collapse" data-target="#answerTwo"
-                                aria-expanded="false" aria-controls="answerTwo">
-                                How many members can be in a team?
-                                <i class="fa fa-chevron-down"></i>
-                            </button>
-                        </h3>
-                    </div>
-                    <div id="answerTwo" class="collapse" aria-labelledby="faqTwo" data-parent="#faqAccordion">
-                        <div class="faq-answer">
-                            <p>A team must consist of exactly 4 members.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" id="faqThree">
-                        <h3>
-                            <button class="faq-toggle" class="collapsed" data-toggle="collapse"
-                                data-target="#answerThree" aria-expanded="false" aria-controls="answerThree">
-                                What is the purpose of SW&D?
-                                <i class="fa fa-chevron-down"></i>
-                            </button>
-                        </h3>
-                    </div>
-                    <div id="answerThree" class="collapse" aria-labelledby="faqThree" data-parent="#faqAccordion">
-                        <div class="faq-answer">
-                            <p>Social Welfare and Development Committee (SW&D) of VIT Pune is dedicated to making a
-                                positive impact through compassionate initiatives. The team works across various
-                                domains, empowering vulnerable communities and fostering hope.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!--                 <div class="faq-item">
-                    <div class="faq-question" id="faqFour">
-                        <h3>
-                            <button class="faq-toggle" class="collapsed" data-toggle="collapse"
-                                data-target="#answerFour" aria-expanded="false" aria-controls="answerFour">
-                                What is the purpose of SW&D?
-                                <i class="fa fa-chevron-down"></i>
-                            </button>
-                        </h3>
-                    </div>
-                    <div id="answerFour" class="collapse" aria-labelledby="faqFour" data-parent="#faqAccordion">
-                        <div class="faq-answer">
-                            <p>The purpose of SW&D is to promote social welfare and development through various
-                                initiatives and community projects.</p>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
+<section class="faq-section">
+    <div class="container">
+        <div class="faq-heading">
+            <h2>Frequently Asked Questions</h2>
         </div>
-    </section>
+        <div id="faqAccordion" class="accordion">
 
+            <!-- Existing FAQs -->
+            <!-- <div class="faq-item">
+                <div class="faq-question" id="faqOne">
+                    <h3>
+                        <button class="faq-toggle" data-toggle="collapse" data-target="#answerOne"
+                            aria-expanded="true" aria-controls="answerOne">
+                            What is PRISM 2025?
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="answerOne" class="collapse show" aria-labelledby="faqOne" data-parent="#faqAccordion">
+                    <div class="faq-answer">
+                        <p>It is a platform to unite individuals dedicated to societal betterment to share impactful ideas for social welfare.</p>
+                    </div>
+                </div>
+            </div> -->
 
+            <!-- <div class="faq-item">
+                <div class="faq-question" id="faqTwo">
+                    <h3>
+                        <button class="faq-toggle collapsed" data-toggle="collapse" data-target="#answerTwo"
+                            aria-expanded="false" aria-controls="answerTwo">
+                            How many members can be in a team?
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="answerTwo" class="collapse" aria-labelledby="faqTwo" data-parent="#faqAccordion">
+                    <div class="faq-answer">
+                        <p>A team must consist of exactly 4 members.</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- <div class="faq-item">
+                <div class="faq-question" id="faqThree">
+                    <h3>
+                        <button class="faq-toggle collapsed" data-toggle="collapse" data-target="#answerThree"
+                            aria-expanded="false" aria-controls="answerThree">
+                            What is the purpose of SW&D?
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="answerThree" class="collapse" aria-labelledby="faqThree" data-parent="#faqAccordion">
+                    <div class="faq-answer">
+                        <p>Social Welfare and Development Committee (SW&D) of VIT Pune is dedicated to making a positive impact through compassionate initiatives. The team works across various domains, empowering vulnerable communities and fostering hope.</p>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- New FAQs -->
+            <div class="faq-item">
+                <div class="faq-question" id="faqFour">
+                    <h3>
+                        <button class="faq-toggle collapsed" data-toggle="collapse" data-target="#answerFour"
+                            aria-expanded="false" aria-controls="answerFour">
+                            What’s the difference between Ideathon and Sociothon?
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="answerFour" class="collapse" aria-labelledby="faqFour" data-parent="#faqAccordion">
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Ideathon (Social Track)</strong> – PPT round on given social topics.<br>
+                            <strong>Sociothon (Technical Track)</strong> – Hackathon with Round 1: Ideation and Round 2: Prototype Showcase. Teams can have 2–4 members.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" id="faqFive">
+                    <h3>
+                        <button class="faq-toggle collapsed" data-toggle="collapse" data-target="#answerFive"
+                            aria-expanded="false" aria-controls="answerFive">
+                            What does ₹180 cover for VIT students?
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="answerFive" class="collapse" aria-labelledby="faqFive" data-parent="#faqAccordion">
+                    <div class="faq-answer">
+                        <p>NGO Talk, Panel Discussion, KalaKriti, Event Experience, and Ideathon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" id="faqSix">
+                    <h3>
+                        <button class="faq-toggle collapsed" data-toggle="collapse" data-target="#answerSix"
+                            aria-expanded="false" aria-controls="answerSix">
+                            What is KalaKriti?
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="answerSix" class="collapse" aria-labelledby="faqSix" data-parent="#faqAccordion">
+                    <div class="faq-answer">
+                        <p>KalaKriti is a cultural showcase, not a competition — open for performances in dance, music, and art.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" id="faqSeven">
+                    <h3>
+                        <button class="faq-toggle collapsed" data-toggle="collapse" data-target="#answerSeven"
+                            aria-expanded="false" aria-controls="answerSeven">
+                            When will Ideathon topics be declared?
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="answerSeven" class="collapse" aria-labelledby="faqSeven" data-parent="#faqAccordion">
+                    <div class="faq-answer">
+                        <p>Topics will be announced on the official website, social media handles, and WhatsApp groups.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+ 
     <div class="separation"></div>
 
     <script>

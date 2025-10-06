@@ -12,9 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style>
+        .navbar-nav .nav-item .nav-link {
+            color: #0A1931;
+        }
         h1 {
             color: white;
-            background-image: url("./assets/image/about-bg-img.jpg");
+            background-image: url("./assets/image/registration-bg-img.jpg");
             background-size: cover;
             background-position: 70%;
             padding: 20px;
@@ -39,7 +42,7 @@
             bottom: 0;
             background-image: inherit;
             background-size: inherit;
-            background-position: inherit;
+            background-position: 100% 55%;
             filter: brightness(50%);
             z-index: 0;
         }
@@ -82,7 +85,7 @@
         }
 
         .containerR marquee {
-            background-color: #c9df8a;
+            background-color: #B3CFE5;
             height: 25px;
         }
 
@@ -101,7 +104,7 @@
             font-size: 20px;
             font-weight: bold;
             color: white;
-            background-color: #c9df8a;
+            background-color: #1A3D63;
             text-align: center;
             text-decoration: none;
             border-radius: 5px;
@@ -111,7 +114,7 @@
         }
 
         .register-button:hover {
-            background-color: #234d20;
+            background-color: #B3CFE5;
             color: white;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
@@ -162,14 +165,14 @@
 
         /* Headings */
         .modal-content h2 {
-            color: #234d20;
+            color: #1A3D63;
             font-size: 1.6rem;
             text-align: center;
             margin-bottom: 1rem;
         }
 
         .modal-content h3 {
-            color: #234d20;
+            color: #1A3D63;
             margin-top: 1rem;
             margin-bottom: 0.5rem;
         }
@@ -220,7 +223,7 @@
             right: 40px;
             width: 32px;
             height: 32px;
-            background-color: #234d20;
+            background-color: #1A3D63;
             border-radius: 50%;
             color: #fff;
             font-weight: bold;
@@ -275,7 +278,7 @@
             display: flex;
             /* justify-content: center; */
             align-items: center;
-            background-color: #c9df8a;
+            background-color: #B3CFE5;
             color: black;
             padding: 10px 350px;
             font-family: "poppins", sans-serif;
@@ -318,7 +321,7 @@
         }
 
         .events-table th {
-            background-color: #234d20;
+            background-color: #1A3D63;
             color: white;
             font-weight: bold;
         }
@@ -361,7 +364,7 @@
         }
 
         #award-announcement {
-            background: linear-gradient(45deg, #234d20, #6fbf73);
+            background: linear-gradient(45deg, #1A3D63, #B3CFE5);
             color: white;
             padding-left: 25px;
             padding-right: 25px;
@@ -483,14 +486,14 @@
         .perks-section {
             margin-top: 2.5rem;
             text-align: center;
-            background: linear-gradient(180deg, #f6fff6, #ffffff);
+            background: linear-gradient(180deg, #EAF3FA 0%, #FFFFFF 100%);
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(35, 77, 32, 0.15);
         }
 
         .perks-section h2 {
-            color: #234d20;
+            color: #1A3D63;
             font-size: 2rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
@@ -507,7 +510,8 @@
 
         .perk-card {
             background: #ffffff;
-            border: 2px solid #e2f0e2;
+            /* border: 2px solid #e2f0e2; */
+            border: 2px solid #E2ECF5;
             border-radius: 12px;
             width: 300px;
             text-align: left;
@@ -522,7 +526,7 @@
         }
 
         .perk-card h3 {
-            color: #2d7a33;
+            color: #1A3D63;
             font-size: 1.3rem;
             margin-bottom: 0.8rem;
             text-align: center;
@@ -546,7 +550,7 @@
             content: "✔";
             position: absolute;
             left: 0;
-            color: #2d7a33;
+            color: #0A1931;
             font-weight: bold;
         }
 
@@ -675,40 +679,57 @@
                 </table>
             </div>
         </div>
-        <div class="perks-section">
-            <h2>🎁 Perks & Benefits</h2>
-            <div class="perks-grid">
-                <div class="perk-card">
-                    <h3>🏅 NSS Unit / Sociothon (₹500)</h3>
-                    <ul>
-                        <li>Team participation (4 members)</li>
-                        <li>Exclusive <strong>Certificates</strong> for all members</li>
-                        <li>Access to <strong>Round-Table Discussion</strong></li>
-                        <li>Conference Merchandise & Refreshments</li>
-                        <li>Eligibility for <strong>Sevasrujan Award</strong> 🏆</li>
-                    </ul>
-                </div>
 
-                <div class="perk-card">
-                    <h3>🎓 College Student (₹180)</h3>
-                    <ul>
-                        <li>Entry to all NGO Talks & Conference sessions</li>
-                        <li>Participation <strong>Certificate</strong></li>
-                        <li>Access to <strong>Networking Zone</strong></li>
-                        <li>Complimentary Refreshments ☕</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="linksR text-center">
+                <!-- <div class="linksR text-center">
             <a href="https://www.example.com/register" class="button">CLICK HERE TO REGISTER</a>
         </div> -->
         <div class="button-container linksR text-center">
             <button class="register-button" onclick="openModal()">REGISTER NOW & CLAIM YOUR PERKS</button>
         </div>
 
+<div class="perks-section">
+    <h2>🎁 Perks & Benefits</h2>
+    <div class="perks-grid">
 
+        <!-- NSS Unit Perks -->
+        <div class="perk-card">
+            <h3> NSS Unit (₹500)</h3>
+            <ul>
+                <li>Exclusive participation in <strong>NGO Talks</strong> by national-level organizations (NAAM Foundation, Teach for India, Vanarai, 1M1B)</li>
+                <li>Opportunity to present <strong>annual tenure activities</strong> and achievements</li>
+                <li>Participation in <strong>Round Table Conference</strong> with NGO representatives and student leaders</li>
+                <li>Networking with multiple <strong>NSS units across Maharashtra</strong></li>
+                <li><strong>Certificates of participation and appreciation</strong> from SWDC, VIT Pune</li>
+            </ul>
+        </div>
+
+        <!-- Sociothon Perks -->
+        <div class="perk-card">
+            <h3> Sociothon (₹500)</h3>
+            <ul>
+                <li><strong>AICTE-approved virtual internship</strong> opportunities with 1M1B and associated NGOs</li>
+                <li><strong>Certificates</strong> for all participants (including IBM SkillsBuild certificates)</li>
+                <li>National-level exposure & networking with <strong>NGOs, experts, and academicians</strong></li>
+                <li>Recognition, mentorship, and learning opportunities through the <strong>PRISM platform</strong></li>
+                <li>Prize Pool worth <strong>₹20,000+</strong> (₹10,000 – Winner | ₹6,000 – First Runner Up | ₹4,000 – Second Runner Up)</li>
+            </ul>
+        </div>
+
+        <!-- College Student Perks -->
+        <div class="perk-card">
+            <h3> College Student (₹180)</h3>
+            <ul>
+                <li>Access to inspiring <strong>NGO Talks</strong> and <strong>Guest Sessions</strong></li>
+                <li>Opportunity to attend the <strong>Panel Discussion</strong> featuring speakers like Prasad Gawade, Mayuresh Gujar, and Deepankar Patil</li>
+                <li>Participation in <strong>KalaKriti</strong> – cultural performances (music, dance, instrumental)</li>
+                <li>Hands-on experience through <strong>Ideathon</strong> – pitch innovative ideas</li>
+                <li>Exposure to <strong>social innovation, sustainability, and real-world problem-solving</strong></li>
+                <li><strong>Certificates of participation</strong> for all attendees</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
 
         <!-- Modal -->
         <div id="infoModal" class="modal">
@@ -750,7 +771,7 @@
                     </li>
                 </ol>
                 <p style="margin-top: 1rem">
-                    ✅ <strong>Note:</strong> Please verify all details before making payment.
+                    <strong>Note:</strong> Please verify all details before making payment.
                 </p>
             </div>
         </div>
